@@ -129,23 +129,7 @@ class Crm_Fonel_Herencia(models.Model):
         send_mail(self.id, force_send=True)
     
 
-    @api.multi
-    def write(self, vals):
-        for ticket in self:
-            if vals.get('stage_id'):
-                stage_obj = self.env['flujo_etapas_operaciones'].browse([vals['stage_id']])                
-                if stage_obj.sequence == 1:
-                    vals['probability'] = '10'
-                if stage_obj.sequence == 2:
-                    vals['probability'] = '50'    
-                if stage_obj.sequence == 3:
-                   vals['probability'] = '70'
-                if stage_obj.sequence == 4 and stage_obj.closed == True:
-                    vals['probability'] = '100'
-
-        res = super(Crm_Fonel_Herencia, self).write(vals)
-
-        return res
+ 
 
 class Tag_Operaciones(models.Model):
     _name = "operaciones_lead_tag"

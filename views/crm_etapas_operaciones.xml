@@ -7,8 +7,8 @@
         <field name="model">flujo_etapas_operaciones</field>
         <field name="arch" type="xml">
             <tree string="Stages">
-                <field name="sequence" widget="handle"/>
                 <field name="name"/>
+                <field name="sequence" />
                 <field name="probability"/>
             </tree>
         </field>
@@ -43,6 +43,9 @@
                             <field name="closed"/>
                             <field name="portal_user_can_close" attrs="{'invisible': [('closed', '=', False)]}"/>
                             <field name="fold"/>
+
+                            <field name="envio_aprobacion"/>
+                            <field name="orden_compra"/>
                         </group>
                     </group>
                     <field name="description" widget="html"/>
