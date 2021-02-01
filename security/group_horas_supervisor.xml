@@ -8,6 +8,12 @@
 			</record>
 
 			<record id="supervisor_flujo_operaciones_group" model="res.groups"> 
+	            <field name="name">Usuario Operaciones</field>
+	            <field name="category_id" ref="module_category_flujo_operaciones"/>
+       		 </record>
+			
+
+			<record id="supervisor_nivel2_flujo_operaciones_group" model="res.groups"> 
 	            <field name="name">Supervisor Operaciones</field>
 	            <field name="category_id" ref="module_category_flujo_operaciones"/>
        		 </record>
