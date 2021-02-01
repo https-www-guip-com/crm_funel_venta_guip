@@ -205,6 +205,7 @@
                             <group>
                                 <field name="date_deadline"/>
                                 <field name="codigo_dispositvio"/>
+                                <field name="user_id"/>
                             </group>
 
                             <group>
