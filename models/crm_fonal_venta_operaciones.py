@@ -41,7 +41,7 @@ class Crm_Fonel_Herencia(models.Model):
     email_from = fields.Char('Correo', help="Email address of the contact")  
     description = fields.Text('Notas')
     contact_name = fields.Char('Nombre de contacto')
-    tag_ids = tag_ids = fields.Many2many('operaciones_lead_tag', string='Etiquetas', help="Classify and analyze your lead/opportunity categories like: Training, Service")
+    tag_ids = fields.Many2many('operaciones_lead_tag', string='Etiquetas', help="Classify and analyze your lead/opportunity categories like: Training, Service")
     #stage_id = fields.Many2one('flujo_etapas_operaciones', string='Etapa', ondelete='restrict', 
     #                            track_visibility='onchange', index=True, copy=False)
 
