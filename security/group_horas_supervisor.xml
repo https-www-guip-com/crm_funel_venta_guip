@@ -42,11 +42,12 @@
             <field name="name">Id regla usuario operaciones</field>
             <field name="model_id" ref="model_crm_flujo_nuevo_operaciones"/>
             <field name="groups" eval="[(6,0, [ref('crm_funel_venta_guip.supervisor_flujo_operaciones_group')])]"/>
+             <field name="domain_force">['|',('user_id','=',user.id),('user_id','=',False)]</field>
             <field name="perm_read" eval="1"/>
             <field name="perm_write" eval="1"/>
             <field name="perm_create" eval="1"/>
             <field name="perm_unlink" eval="0" />
-            <field name="domain_force">['|',('user_id','=',user.id),('user_id','=',False)]</field>
+           
     </record>
 
    

@@ -59,7 +59,7 @@ class Crm_Fonel_Herencia(models.Model):
     )
 
    
-    user_id = fields.Many2one('res.users', string='Usuario Asignado', track_visibility='onchange')
+    user_id = fields.Many2one('res.users', string='Operador', track_visibility='onchange')
     vendedor_id = fields.Many2one('res.users', string='Vendedor Asignado', track_visibility='onchange')
     referred = fields.Char('Referido por')
     probability = fields.Float('Probability', group_operator="avg", copy=False, default=10)
@@ -129,6 +129,8 @@ class Crm_Fonel_Herencia(models.Model):
         send_mail(self.id, force_send=True)
     
 
+    def assign_to_me(self):
+        self.write({'user_id': self.env.user.id})
  
 
 class Tag_Operaciones(models.Model):

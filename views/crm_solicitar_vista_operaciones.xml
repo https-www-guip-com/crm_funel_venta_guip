@@ -72,8 +72,11 @@
                                     <div>
                                         <strong class="o_kanban_record_title"><field name="name"/></strong>
                                     </div>
-                                    <div>
-                                        <field name="tag_ids" widget="many2many_tags" options="{'color_field': 'color'}"/>
+                                    <div >
+                                        <field name="tag_ids" widget="many2many_tags" options="{'color_field': 'color'}" style="font-size: 8px;" />
+                                    </div>
+                                     <div>
+                                        Operador: <field name="user_id"/>
                                     </div>
                                     <!--Icono que muestra las actividades -->
                                     <div class="o_kanban_record_bottom">
@@ -148,6 +151,12 @@
         <field name="arch" type="xml">
             <form string="Flujo de operaciones" class="o_opportunity_form">
             	<header>
+
+                  <button string="Asignarme"
+                            name="assign_to_me"
+                            type="object"
+                            attrs="{'invisible' : [('user_id', '!=', False)]}"/>
+                    
                 
                 <button name="enviar_capacitacion_opera" string="Enviar Correo de capacitacion" type="object" 
                 class="oe_highlight" attrs="{'invisible': ['|', ('active','=',False), ('probability', '!=', 70)]}"/>
